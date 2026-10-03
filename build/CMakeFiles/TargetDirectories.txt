@@ -1,0 +1,3 @@
+/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/signal-codec.dir
+/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/edit_cache.dir
+/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/rebuild_cache.dir
