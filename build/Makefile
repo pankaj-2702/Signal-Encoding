@@ -153,6 +153,102 @@ apps/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/apps/main.cpp.s
 .PHONY : apps/main.cpp.s
 
+src/generator/DataGenerator.o: src/generator/DataGenerator.cpp.o
+.PHONY : src/generator/DataGenerator.o
+
+# target to build an object file
+src/generator/DataGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o
+.PHONY : src/generator/DataGenerator.cpp.o
+
+src/generator/DataGenerator.i: src/generator/DataGenerator.cpp.i
+.PHONY : src/generator/DataGenerator.i
+
+# target to preprocess a source file
+src/generator/DataGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.i
+.PHONY : src/generator/DataGenerator.cpp.i
+
+src/generator/DataGenerator.s: src/generator/DataGenerator.cpp.s
+.PHONY : src/generator/DataGenerator.s
+
+# target to generate assembly for a file
+src/generator/DataGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.s
+.PHONY : src/generator/DataGenerator.cpp.s
+
+src/linecode/Ami.o: src/linecode/Ami.cpp.o
+.PHONY : src/linecode/Ami.o
+
+# target to build an object file
+src/linecode/Ami.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o
+.PHONY : src/linecode/Ami.cpp.o
+
+src/linecode/Ami.i: src/linecode/Ami.cpp.i
+.PHONY : src/linecode/Ami.i
+
+# target to preprocess a source file
+src/linecode/Ami.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.i
+.PHONY : src/linecode/Ami.cpp.i
+
+src/linecode/Ami.s: src/linecode/Ami.cpp.s
+.PHONY : src/linecode/Ami.s
+
+# target to generate assembly for a file
+src/linecode/Ami.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.s
+.PHONY : src/linecode/Ami.cpp.s
+
+src/linecode/DiffManchester.o: src/linecode/DiffManchester.cpp.o
+.PHONY : src/linecode/DiffManchester.o
+
+# target to build an object file
+src/linecode/DiffManchester.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o
+.PHONY : src/linecode/DiffManchester.cpp.o
+
+src/linecode/DiffManchester.i: src/linecode/DiffManchester.cpp.i
+.PHONY : src/linecode/DiffManchester.i
+
+# target to preprocess a source file
+src/linecode/DiffManchester.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.i
+.PHONY : src/linecode/DiffManchester.cpp.i
+
+src/linecode/DiffManchester.s: src/linecode/DiffManchester.cpp.s
+.PHONY : src/linecode/DiffManchester.s
+
+# target to generate assembly for a file
+src/linecode/DiffManchester.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.s
+.PHONY : src/linecode/DiffManchester.cpp.s
+
+src/linecode/Manchester.o: src/linecode/Manchester.cpp.o
+.PHONY : src/linecode/Manchester.o
+
+# target to build an object file
+src/linecode/Manchester.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o
+.PHONY : src/linecode/Manchester.cpp.o
+
+src/linecode/Manchester.i: src/linecode/Manchester.cpp.i
+.PHONY : src/linecode/Manchester.i
+
+# target to preprocess a source file
+src/linecode/Manchester.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.i
+.PHONY : src/linecode/Manchester.cpp.i
+
+src/linecode/Manchester.s: src/linecode/Manchester.cpp.s
+.PHONY : src/linecode/Manchester.s
+
+# target to generate assembly for a file
+src/linecode/Manchester.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.s
+.PHONY : src/linecode/Manchester.cpp.s
+
 src/linecode/NrzI.o: src/linecode/NrzI.cpp.o
 .PHONY : src/linecode/NrzI.o
 
@@ -201,6 +297,78 @@ src/linecode/NrzL.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.s
 .PHONY : src/linecode/NrzL.cpp.s
 
+src/render/SignalPlotter.o: src/render/SignalPlotter.cpp.o
+.PHONY : src/render/SignalPlotter.o
+
+# target to build an object file
+src/render/SignalPlotter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o
+.PHONY : src/render/SignalPlotter.cpp.o
+
+src/render/SignalPlotter.i: src/render/SignalPlotter.cpp.i
+.PHONY : src/render/SignalPlotter.i
+
+# target to preprocess a source file
+src/render/SignalPlotter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.i
+.PHONY : src/render/SignalPlotter.cpp.i
+
+src/render/SignalPlotter.s: src/render/SignalPlotter.cpp.s
+.PHONY : src/render/SignalPlotter.s
+
+# target to generate assembly for a file
+src/render/SignalPlotter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.s
+.PHONY : src/render/SignalPlotter.cpp.s
+
+src/ui/GeneratorPanel.o: src/ui/GeneratorPanel.cpp.o
+.PHONY : src/ui/GeneratorPanel.o
+
+# target to build an object file
+src/ui/GeneratorPanel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o
+.PHONY : src/ui/GeneratorPanel.cpp.o
+
+src/ui/GeneratorPanel.i: src/ui/GeneratorPanel.cpp.i
+.PHONY : src/ui/GeneratorPanel.i
+
+# target to preprocess a source file
+src/ui/GeneratorPanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.i
+.PHONY : src/ui/GeneratorPanel.cpp.i
+
+src/ui/GeneratorPanel.s: src/ui/GeneratorPanel.cpp.s
+.PHONY : src/ui/GeneratorPanel.s
+
+# target to generate assembly for a file
+src/ui/GeneratorPanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.s
+.PHONY : src/ui/GeneratorPanel.cpp.s
+
+src/ui/Menu.o: src/ui/Menu.cpp.o
+.PHONY : src/ui/Menu.o
+
+# target to build an object file
+src/ui/Menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o
+.PHONY : src/ui/Menu.cpp.o
+
+src/ui/Menu.i: src/ui/Menu.cpp.i
+.PHONY : src/ui/Menu.i
+
+# target to preprocess a source file
+src/ui/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.i
+.PHONY : src/ui/Menu.cpp.i
+
+src/ui/Menu.s: src/ui/Menu.cpp.s
+.PHONY : src/ui/Menu.s
+
+# target to generate assembly for a file
+src/ui/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.s
+.PHONY : src/ui/Menu.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,12 +381,33 @@ help:
 	@echo "... apps/main.o"
 	@echo "... apps/main.i"
 	@echo "... apps/main.s"
+	@echo "... src/generator/DataGenerator.o"
+	@echo "... src/generator/DataGenerator.i"
+	@echo "... src/generator/DataGenerator.s"
+	@echo "... src/linecode/Ami.o"
+	@echo "... src/linecode/Ami.i"
+	@echo "... src/linecode/Ami.s"
+	@echo "... src/linecode/DiffManchester.o"
+	@echo "... src/linecode/DiffManchester.i"
+	@echo "... src/linecode/DiffManchester.s"
+	@echo "... src/linecode/Manchester.o"
+	@echo "... src/linecode/Manchester.i"
+	@echo "... src/linecode/Manchester.s"
 	@echo "... src/linecode/NrzI.o"
 	@echo "... src/linecode/NrzI.i"
 	@echo "... src/linecode/NrzI.s"
 	@echo "... src/linecode/NrzL.o"
 	@echo "... src/linecode/NrzL.i"
 	@echo "... src/linecode/NrzL.s"
+	@echo "... src/render/SignalPlotter.o"
+	@echo "... src/render/SignalPlotter.i"
+	@echo "... src/render/SignalPlotter.s"
+	@echo "... src/ui/GeneratorPanel.o"
+	@echo "... src/ui/GeneratorPanel.i"
+	@echo "... src/ui/GeneratorPanel.s"
+	@echo "... src/ui/Menu.o"
+	@echo "... src/ui/Menu.i"
+	@echo "... src/ui/Menu.s"
 .PHONY : help
 
 

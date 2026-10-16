@@ -86,10 +86,24 @@ CMakeFiles/signal-codec.dir/apps/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/apps/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/apps/main.cpp" -o CMakeFiles/signal-codec.dir/apps/main.cpp.s
 
+CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o: CMakeFiles/signal-codec.dir/flags.make
+CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/ui/Menu.cpp
+CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o -MF CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o.d -o CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/ui/Menu.cpp"
+
+CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/PankajKumar/Desktop/Line Encding/src/ui/Menu.cpp" > CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.i
+
+CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/src/ui/Menu.cpp" -o CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.s
+
 CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o: CMakeFiles/signal-codec.dir/flags.make
 CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/linecode/NrzL.cpp
 CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o -MF CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o.d -o CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/linecode/NrzL.cpp"
 
 CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.s: cmake_force
 CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o: CMakeFiles/signal-codec.dir/flags.make
 CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/linecode/NrzI.cpp
 CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o -MF CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o.d -o CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/linecode/NrzI.cpp"
 
 CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.i: cmake_force
@@ -114,22 +128,123 @@ CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/src/linecode/NrzI.cpp" -o CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.s
 
+CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o: CMakeFiles/signal-codec.dir/flags.make
+CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/linecode/Manchester.cpp
+CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o -MF CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o.d -o CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/linecode/Manchester.cpp"
+
+CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/PankajKumar/Desktop/Line Encding/src/linecode/Manchester.cpp" > CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.i
+
+CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/src/linecode/Manchester.cpp" -o CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.s
+
+CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o: CMakeFiles/signal-codec.dir/flags.make
+CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/linecode/DiffManchester.cpp
+CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o -MF CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o.d -o CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/linecode/DiffManchester.cpp"
+
+CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/PankajKumar/Desktop/Line Encding/src/linecode/DiffManchester.cpp" > CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.i
+
+CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/src/linecode/DiffManchester.cpp" -o CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.s
+
+CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o: CMakeFiles/signal-codec.dir/flags.make
+CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/linecode/Ami.cpp
+CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o -MF CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o.d -o CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/linecode/Ami.cpp"
+
+CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/PankajKumar/Desktop/Line Encding/src/linecode/Ami.cpp" > CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.i
+
+CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/src/linecode/Ami.cpp" -o CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.s
+
+CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o: CMakeFiles/signal-codec.dir/flags.make
+CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/generator/DataGenerator.cpp
+CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o -MF CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o.d -o CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/generator/DataGenerator.cpp"
+
+CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/PankajKumar/Desktop/Line Encding/src/generator/DataGenerator.cpp" > CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.i
+
+CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/src/generator/DataGenerator.cpp" -o CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.s
+
+CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o: CMakeFiles/signal-codec.dir/flags.make
+CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/render/SignalPlotter.cpp
+CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o -MF CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o.d -o CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/render/SignalPlotter.cpp"
+
+CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/PankajKumar/Desktop/Line Encding/src/render/SignalPlotter.cpp" > CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.i
+
+CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/src/render/SignalPlotter.cpp" -o CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.s
+
+CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o: CMakeFiles/signal-codec.dir/flags.make
+CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o: /home/PankajKumar/Desktop/Line\ Encding/src/ui/GeneratorPanel.cpp
+CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o: CMakeFiles/signal-codec.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o -MF CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o.d -o CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o -c "/home/PankajKumar/Desktop/Line Encding/src/ui/GeneratorPanel.cpp"
+
+CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/PankajKumar/Desktop/Line Encding/src/ui/GeneratorPanel.cpp" > CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.i
+
+CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/PankajKumar/Desktop/Line Encding/src/ui/GeneratorPanel.cpp" -o CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.s
+
 # Object files for target signal-codec
 signal__codec_OBJECTS = \
 "CMakeFiles/signal-codec.dir/apps/main.cpp.o" \
+"CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o" \
 "CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o" \
-"CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o"
+"CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o" \
+"CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o" \
+"CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o" \
+"CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o" \
+"CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o" \
+"CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o" \
+"CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o"
 
 # External object files for target signal-codec
 signal__codec_EXTERNAL_OBJECTS =
 
 signal-codec: CMakeFiles/signal-codec.dir/apps/main.cpp.o
+signal-codec: CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.o
 signal-codec: CMakeFiles/signal-codec.dir/src/linecode/NrzL.cpp.o
 signal-codec: CMakeFiles/signal-codec.dir/src/linecode/NrzI.cpp.o
+signal-codec: CMakeFiles/signal-codec.dir/src/linecode/Manchester.cpp.o
+signal-codec: CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.o
+signal-codec: CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o
+signal-codec: CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o
+signal-codec: CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o
+signal-codec: CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o
 signal-codec: CMakeFiles/signal-codec.dir/build.make
 signal-codec: CMakeFiles/signal-codec.dir/compiler_depend.ts
+signal-codec: /usr/lib64/libsfml-graphics.so.2.6.2
+signal-codec: /usr/lib64/libsfml-window.so.2.6.2
+signal-codec: /usr/lib64/libsfml-system.so.2.6.2
 signal-codec: CMakeFiles/signal-codec.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable signal-codec"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable signal-codec"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/signal-codec.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
