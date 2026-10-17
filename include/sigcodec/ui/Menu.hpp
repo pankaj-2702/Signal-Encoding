@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -11,7 +12,6 @@ public:
     explicit Menu(const sf::Font& font);
 
     void draw(sf::RenderTarget& target) const;
-
     void handleClick(float x, float y);
 
     const std::string& selectedEncoder() const;
@@ -20,10 +20,11 @@ private:
     const sf::Font& font_;
 
     std::vector<std::string> encoders_;
-
     std::string selectedEncoder_;
 
     sf::FloatRect menuBounds_;
+    bool isOpen_;
+    float optionHeight_;
 };
 
-} // namespace sigcodec
+}

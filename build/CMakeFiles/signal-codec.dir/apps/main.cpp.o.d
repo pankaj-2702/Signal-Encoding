@@ -234,14 +234,6 @@ CMakeFiles/signal-codec.dir/apps/main.cpp.o: \
  /usr/include/c++/15/bits/atomic_lockfree_defines.h \
  /usr/include/c++/15/backward/auto_ptr.h \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
- /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/core/Registry.hpp \
- /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
- /usr/include/c++/15/unordered_map \
- /usr/include/c++/15/bits/unordered_map.h \
- /usr/include/c++/15/bits/hashtable.h \
- /usr/include/c++/15/bits/hashtable_policy.h \
- /usr/include/c++/15/bits/enable_special_members.h \
- /usr/include/c++/15/array /usr/include/c++/15/compare \
  /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/linecode/ILineCoder.hpp \
  /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/core/Types.hpp \
  /usr/include/c++/15/cstdint \
@@ -251,6 +243,9 @@ CMakeFiles/signal-codec.dir/apps/main.cpp.o: \
  /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/linecode/Manchester.hpp \
  /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/linecode/DiffManchester.hpp \
  /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/linecode/Ami.hpp \
+ /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/linecode/B8ZS.hpp \
+ /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/linecode/IZeroScrambler.hpp \
+ /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/linecode/HDB3.hpp \
  /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/render/SignalPlotter.hpp \
  /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/ui/Menu.hpp \
  /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/ui/GeneratorPanel.hpp \

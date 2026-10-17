@@ -12,6 +12,8 @@ signal-codec: \
   CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o \
   CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o \
   CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o \
+  CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.o \
+  CMakeFiles/signal-codec.dir/src/linecode/HDB3.cpp.o \
   /usr/lib64/libsfml-graphics.so.2.6.2 \
   /usr/lib64/libsfml-window.so.2.6.2 \
   /usr/lib64/libsfml-system.so.2.6.2 \
@@ -88,6 +90,10 @@ CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o:
 CMakeFiles/signal-codec.dir/src/render/SignalPlotter.cpp.o:
 
 CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o:
+
+CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.o:
+
+CMakeFiles/signal-codec.dir/src/linecode/HDB3.cpp.o:
 
 /usr/lib64/libsfml-graphics.so.2.6.2:
 

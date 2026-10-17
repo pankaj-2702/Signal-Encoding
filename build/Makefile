@@ -201,6 +201,30 @@ src/linecode/Ami.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.s
 .PHONY : src/linecode/Ami.cpp.s
 
+src/linecode/B8ZS.o: src/linecode/B8ZS.cpp.o
+.PHONY : src/linecode/B8ZS.o
+
+# target to build an object file
+src/linecode/B8ZS.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.o
+.PHONY : src/linecode/B8ZS.cpp.o
+
+src/linecode/B8ZS.i: src/linecode/B8ZS.cpp.i
+.PHONY : src/linecode/B8ZS.i
+
+# target to preprocess a source file
+src/linecode/B8ZS.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.i
+.PHONY : src/linecode/B8ZS.cpp.i
+
+src/linecode/B8ZS.s: src/linecode/B8ZS.cpp.s
+.PHONY : src/linecode/B8ZS.s
+
+# target to generate assembly for a file
+src/linecode/B8ZS.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.s
+.PHONY : src/linecode/B8ZS.cpp.s
+
 src/linecode/DiffManchester.o: src/linecode/DiffManchester.cpp.o
 .PHONY : src/linecode/DiffManchester.o
 
@@ -224,6 +248,30 @@ src/linecode/DiffManchester.s: src/linecode/DiffManchester.cpp.s
 src/linecode/DiffManchester.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/DiffManchester.cpp.s
 .PHONY : src/linecode/DiffManchester.cpp.s
+
+src/linecode/HDB3.o: src/linecode/HDB3.cpp.o
+.PHONY : src/linecode/HDB3.o
+
+# target to build an object file
+src/linecode/HDB3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/HDB3.cpp.o
+.PHONY : src/linecode/HDB3.cpp.o
+
+src/linecode/HDB3.i: src/linecode/HDB3.cpp.i
+.PHONY : src/linecode/HDB3.i
+
+# target to preprocess a source file
+src/linecode/HDB3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/HDB3.cpp.i
+.PHONY : src/linecode/HDB3.cpp.i
+
+src/linecode/HDB3.s: src/linecode/HDB3.cpp.s
+.PHONY : src/linecode/HDB3.s
+
+# target to generate assembly for a file
+src/linecode/HDB3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/HDB3.cpp.s
+.PHONY : src/linecode/HDB3.cpp.s
 
 src/linecode/Manchester.o: src/linecode/Manchester.cpp.o
 .PHONY : src/linecode/Manchester.o
@@ -387,9 +435,15 @@ help:
 	@echo "... src/linecode/Ami.o"
 	@echo "... src/linecode/Ami.i"
 	@echo "... src/linecode/Ami.s"
+	@echo "... src/linecode/B8ZS.o"
+	@echo "... src/linecode/B8ZS.i"
+	@echo "... src/linecode/B8ZS.s"
 	@echo "... src/linecode/DiffManchester.o"
 	@echo "... src/linecode/DiffManchester.i"
 	@echo "... src/linecode/DiffManchester.s"
+	@echo "... src/linecode/HDB3.o"
+	@echo "... src/linecode/HDB3.i"
+	@echo "... src/linecode/HDB3.s"
 	@echo "... src/linecode/Manchester.o"
 	@echo "... src/linecode/Manchester.i"
 	@echo "... src/linecode/Manchester.s"
