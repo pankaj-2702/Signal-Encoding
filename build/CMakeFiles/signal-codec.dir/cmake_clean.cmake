@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/signal-codec.dir/link.d"
   "CMakeFiles/signal-codec.dir/apps/main.cpp.o"
   "CMakeFiles/signal-codec.dir/apps/main.cpp.o.d"
+  "CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.o"
+  "CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.o.d"
   "CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o"
   "CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o.d"
   "CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o"

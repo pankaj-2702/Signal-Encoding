@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/PankajKumar/Desktop/Line Encding/apps/main.cpp" "CMakeFiles/signal-codec.dir/apps/main.cpp.o" "gcc" "CMakeFiles/signal-codec.dir/apps/main.cpp.o.d"
+  "/home/PankajKumar/Desktop/Line Encding/src/analog/Pcm.cpp" "CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.o" "gcc" "CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.o.d"
   "/home/PankajKumar/Desktop/Line Encding/src/generator/DataGenerator.cpp" "CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o" "gcc" "CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o.d"
   "/home/PankajKumar/Desktop/Line Encding/src/linecode/Ami.cpp" "CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o" "gcc" "CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o.d"
   "/home/PankajKumar/Desktop/Line Encding/src/linecode/B8ZS.cpp" "CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.o" "gcc" "CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.o.d"

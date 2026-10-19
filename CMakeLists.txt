@@ -25,7 +25,7 @@ add_executable(signal-codec
     src/ui/GeneratorPanel.cpp
     src/linecode/B8ZS.cpp
     src/linecode/HDB3.cpp
-    
+    src/analog/Pcm.cpp
 )
 
 target_include_directories(signal-codec

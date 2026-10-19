@@ -247,4 +247,8 @@ CMakeFiles/signal-codec.dir/src/ui/GeneratorPanel.cpp.o: \
  /usr/include/c++/15/bits/random.tcc /usr/include/c++/15/numeric \
  /usr/include/c++/15/bits/stl_numeric.h \
  /usr/include/c++/15/pstl/glue_numeric_defs.h \
- /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/core/Types.hpp
+ /home/PankajKumar/Desktop/Line\ Encding/include/sigcodec/core/Types.hpp \
+ /usr/include/c++/15/iomanip /usr/include/c++/15/bits/quoted_string.h \
+ /usr/include/c++/15/sstream /usr/include/c++/15/istream \
+ /usr/include/c++/15/bits/istream.tcc \
+ /usr/include/c++/15/bits/sstream.tcc

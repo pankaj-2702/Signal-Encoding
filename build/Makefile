@@ -153,6 +153,30 @@ apps/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/apps/main.cpp.s
 .PHONY : apps/main.cpp.s
 
+src/analog/Pcm.o: src/analog/Pcm.cpp.o
+.PHONY : src/analog/Pcm.o
+
+# target to build an object file
+src/analog/Pcm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.o
+.PHONY : src/analog/Pcm.cpp.o
+
+src/analog/Pcm.i: src/analog/Pcm.cpp.i
+.PHONY : src/analog/Pcm.i
+
+# target to preprocess a source file
+src/analog/Pcm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.i
+.PHONY : src/analog/Pcm.cpp.i
+
+src/analog/Pcm.s: src/analog/Pcm.cpp.s
+.PHONY : src/analog/Pcm.s
+
+# target to generate assembly for a file
+src/analog/Pcm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.s
+.PHONY : src/analog/Pcm.cpp.s
+
 src/generator/DataGenerator.o: src/generator/DataGenerator.cpp.o
 .PHONY : src/generator/DataGenerator.o
 
@@ -429,6 +453,9 @@ help:
 	@echo "... apps/main.o"
 	@echo "... apps/main.i"
 	@echo "... apps/main.s"
+	@echo "... src/analog/Pcm.o"
+	@echo "... src/analog/Pcm.i"
+	@echo "... src/analog/Pcm.s"
 	@echo "... src/generator/DataGenerator.o"
 	@echo "... src/generator/DataGenerator.i"
 	@echo "... src/generator/DataGenerator.s"

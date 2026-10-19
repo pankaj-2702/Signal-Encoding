@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -19,7 +20,21 @@ public:
         float width,
         float height,
         const sf::Color& color,
-        const sf::Font& font
+        const sf::Font& font,
+        const sf::Font* boldFont = nullptr
+    ) const;
+
+    void drawComparison(
+        sf::RenderTarget& target,
+        const Signal& originalSignal,
+        const Signal& reconstructedSignal,
+        const std::string& title,
+        float x,
+        float y,
+        float width,
+        float height,
+        const sf::Font& font,
+        const sf::Font* boldFont = nullptr
     ) const;
 };
 
