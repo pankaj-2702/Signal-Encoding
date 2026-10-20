@@ -1,10 +1,10 @@
-Start testing: Oct 21 01:34 IST
+Start testing: Oct 21 01:47 IST
 ----------------------------------------------------------
 1/3 Testing: test_pcm
 1/3 Test: test_pcm
 Command: "/home/PankajKumar/Desktop/Line Encding/build/test_pcm"
 Directory: /home/PankajKumar/Desktop/Line Encding/build
-"test_pcm" start time: Oct 21 01:34 IST
+"test_pcm" start time: Oct 21 01:47 IST
 Output:
 ----------------------------------------------------------
 PASS: 4-bit PCM tests (16 levels, 4 bits/sample)
@@ -17,7 +17,7 @@ All PCM 4-bit, 6-bit, and amplitude scaling tests passed successfully!
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_pcm" end time: Oct 21 01:34 IST
+"test_pcm" end time: Oct 21 01:47 IST
 "test_pcm" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -25,7 +25,7 @@ Test Passed.
 2/3 Test: test_generator
 Command: "/home/PankajKumar/Desktop/Line Encding/build/test_generator"
 Directory: /home/PankajKumar/Desktop/Line Encding/build
-"test_generator" start time: Oct 21 01:34 IST
+"test_generator" start time: Oct 21 01:47 IST
 Output:
 ----------------------------------------------------------
 
@@ -76,10 +76,10 @@ Output:
 
 All 39 checks passed!
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_generator" end time: Oct 21 01:34 IST
+"test_generator" end time: Oct 21 01:47 IST
 "test_generator" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -87,7 +87,7 @@ Test Passed.
 3/3 Test: test_scramblers
 Command: "/home/PankajKumar/Desktop/Line Encding/build/test_scramblers"
 Directory: /home/PankajKumar/Desktop/Line Encding/build
-"test_scramblers" start time: Oct 21 01:34 IST
+"test_scramblers" start time: Oct 21 01:47 IST
 Output:
 ----------------------------------------------------------
 === B8ZS Tests ===
@@ -111,8 +111,8 @@ All 10 tests passed!
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_scramblers" end time: Oct 21 01:34 IST
+"test_scramblers" end time: Oct 21 01:47 IST
 "test_scramblers" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 21 01:34 IST
+End testing: Oct 21 01:47 IST
