@@ -21,7 +21,20 @@
 #include "sigcodec/ui/Menu.hpp"
 #include "sigcodec/ui/GeneratorPanel.hpp"
 
+#include <iomanip>
+#include <sstream>
+
 using namespace sigcodec;
+
+static std::string formatVolt(double v)
+{
+    if (std::abs(v) < 0.005) {
+        v = 0.0;
+    }
+    std::ostringstream ss;
+    ss << std::fixed << std::setprecision(2) << v;
+    return ss.str();
+}
 
 Signal convertToSignal(const BipolarSignal& pulses)
 {
@@ -37,7 +50,7 @@ Signal convertToSignal(const BipolarSignal& pulses)
     return result;
 }
 
-std::vector<double> generateAnalogSamples(std::size_t count)
+std::vector<double> generateAnalogSamples(std::size_t count, double amplitude = 1.0)
 {
     std::vector<double> samples;
     samples.reserve(count);
@@ -47,26 +60,40 @@ std::vector<double> generateAnalogSamples(std::size_t count)
             2.0 * 3.14159265358979323846 *
             static_cast<double>(i) / static_cast<double>(count);
 
-        samples.push_back(std::sin(angle));
+        double val = amplitude * std::sin(angle);
+        if (std::abs(val) < 1e-12) {
+            val = 0.0;
+        }
+        samples.push_back(val);
     }
 
     return samples;
 }
 
-Signal samplesToSignal(const std::vector<double>& samples)
+// Generates a smooth high-resolution continuous sine wave spanning
+// [0.0, sampleCount] (one full 2π period) using `resolution` points per
+// sample interval — produces a true sine curve instead of a triangle.
+Signal generateContinuousSine(std::size_t sampleCount,
+                               std::size_t resolution = 360,
+                               double amplitude = 1.0)
 {
-    Signal result;
-    result.reserve(samples.size());
+    const double total    = static_cast<double>(sampleCount);
+    const std::size_t pts = sampleCount * resolution + 1; // +1 closes at t=8
+    const double pi2      = 2.0 * 3.14159265358979323846;
 
-    for (std::size_t i = 0; i < samples.size(); ++i) {
-        result.push_back({
-            static_cast<double>(i),
-            samples[i]
-        });
+    Signal result;
+    result.reserve(pts);
+
+    for (std::size_t i = 0; i < pts; ++i) {
+        const double t     = total * static_cast<double>(i)
+                             / static_cast<double>(pts - 1);
+        const double angle = pi2 * t / total;          // 0 → 2π
+        result.push_back({t, amplitude * std::sin(angle)});
     }
 
     return result;
 }
+
 
 int main()
 {
@@ -102,13 +129,23 @@ int main()
     SignalPlotter plotter;
     Pcm pcm;
 
-    const std::vector<double> analogSamples = generateAnalogSamples(8);
-    const BitStream analogBits = pcm.encode(analogSamples, 8);
-    const PcmResult pcmResult = pcm.decode(analogBits, 8);
-    const Signal originalSignal = samplesToSignal(analogSamples);
+    int pcmBitDepth = 4; // Starts in 4-bit PCM mode (16 levels) by default
+    double analogAmplitude = 1.0; // Input sine wave amplitude in Volts (0.1V to 1.0V)
+    std::vector<double> analogSamples = generateAnalogSamples(8, analogAmplitude);
+    BitStream analogBits = pcm.encode(analogSamples, pcmBitDepth);
+    PcmResult pcmResult  = pcm.decode(analogBits, pcmBitDepth);
+    Signal continuousSine = generateContinuousSine(8, 360, analogAmplitude);
 
     bool analogMode = false;
     bool signalNeedsUpdate = true;
+
+    auto updateAnalog = [&]() {
+        analogSamples = generateAnalogSamples(8, analogAmplitude);
+        continuousSine = generateContinuousSine(8, 360, analogAmplitude);
+        analogBits = pcm.encode(analogSamples, pcmBitDepth);
+        pcmResult = pcm.decode(analogBits, pcmBitDepth);
+        signalNeedsUpdate = true;
+    };
 
     BitStream previousBits;
     std::string previousEncoder;
@@ -124,6 +161,10 @@ int main()
         << "  - Click buttons in the GUI or use keyboard shortcuts:\n"
         << "    [D]: Digital Line Coding Mode\n"
         << "    [A]: Analog PCM Modulation Mode\n"
+        << "    [4]: In Analog Mode: 4-bit PCM (16 quantization levels, Default)\n"
+        << "    [6]: In Analog Mode: 6-bit PCM (64 quantization levels)\n"
+        << "    [+]/[Up]: In Analog Mode: Increase Sine Amplitude (+0.1V)\n"
+        << "    [-]/[Down]: In Analog Mode: Decrease Sine Amplitude (-0.1V)\n"
         << "    [N]: AMI Normal (No Scrambling)\n"
         << "    [B]: AMI with B8ZS Scrambling\n"
         << "    [H]: AMI with HDB3 Scrambling\n"
@@ -136,6 +177,8 @@ int main()
         const float margin = 36.f;
 
         // Scaled mode button bounds on top navigation bar
+        const float headerX = margin;
+        const float headerW = windowWidth - 2.f * margin;
         const float headerY = 16.f;
         const float headerH = 92.f;
         const float btnW = 280.f;
@@ -145,6 +188,32 @@ int main()
         const float analogBtnX = digitalBtnX + btnW + 14.f;
         const sf::FloatRect digitalBtnBounds(digitalBtnX, btnY, btnW, btnH);
         const sf::FloatRect analogBtnBounds(analogBtnX, btnY, btnW, btnH);
+
+        // Analog Mode control bounds
+        const float cardY = 125.f;
+        const float cardH = 150.f;
+        const float rightEdge = headerX + headerW - 28.f;
+
+        // Row 1: Bit-depth buttons: 4-bit (16 lvls) & 6-bit (64 lvls)
+        const float r1BtnW = 210.f;
+        const float r1BtnH = 44.f;
+        const float r1Y = cardY + 38.f;
+        const sf::FloatRect pcm4BtnBounds(rightEdge - 2.f * r1BtnW - 14.f, r1Y, r1BtnW, r1BtnH);
+        const sf::FloatRect pcm6BtnBounds(rightEdge - r1BtnW, r1Y, r1BtnW, r1BtnH);
+
+        // Row 2: Amplitude controls: [-] [ Amp: 1.00 V ] [+] [0.50 V] [1.00 V]
+        const float r2Y = cardY + 92.f;
+        const float r2BtnH = 42.f;
+        const float r2StepW = 46.f;
+        const float r2ValW = 126.f;
+        const float r2PresetW = 88.f;
+        const float r2StartX = rightEdge - (r2StepW + 8.f + r2ValW + 8.f + r2StepW + 14.f + r2PresetW + 8.f + r2PresetW);
+
+        const sf::FloatRect ampMinusBtnBounds(r2StartX, r2Y, r2StepW, r2BtnH);
+        const sf::FloatRect ampValBoxBounds(r2StartX + r2StepW + 8.f, r2Y, r2ValW, r2BtnH);
+        const sf::FloatRect ampPlusBtnBounds(r2StartX + r2StepW + 8.f + r2ValW + 8.f, r2Y, r2StepW, r2BtnH);
+        const sf::FloatRect ampPreset1Bounds(r2StartX + r2StepW + 8.f + r2ValW + 8.f + r2StepW + 14.f, r2Y, r2PresetW, r2BtnH); // 0.50 V
+        const sf::FloatRect ampPreset2Bounds(rightEdge - r2PresetW, r2Y, r2PresetW, r2BtnH); // 1.00 V
 
         sf::Event event{};
         while (window.pollEvent(event)) {
@@ -189,7 +258,55 @@ int main()
                     continue;
                 }
 
-                if (!analogMode) {
+                if (analogMode) {
+                    if (pcm4BtnBounds.contains(worldPosition)) {
+                        if (pcmBitDepth != 4) {
+                            pcmBitDepth = 4;
+                            updateAnalog();
+                        }
+                        continue;
+                    }
+
+                    if (pcm6BtnBounds.contains(worldPosition)) {
+                        if (pcmBitDepth != 6) {
+                            pcmBitDepth = 6;
+                            updateAnalog();
+                        }
+                        continue;
+                    }
+
+                    if (ampMinusBtnBounds.contains(worldPosition)) {
+                        if (analogAmplitude > 0.15) {
+                            analogAmplitude = std::max(0.1, std::round((analogAmplitude - 0.1) * 10.0) / 10.0);
+                            updateAnalog();
+                        }
+                        continue;
+                    }
+
+                    if (ampPlusBtnBounds.contains(worldPosition)) {
+                        if (analogAmplitude < 0.95) {
+                            analogAmplitude = std::min(1.0, std::round((analogAmplitude + 0.1) * 10.0) / 10.0);
+                            updateAnalog();
+                        }
+                        continue;
+                    }
+
+                    if (ampPreset1Bounds.contains(worldPosition)) {
+                        if (std::abs(analogAmplitude - 0.5) > 0.01) {
+                            analogAmplitude = 0.5;
+                            updateAnalog();
+                        }
+                        continue;
+                    }
+
+                    if (ampPreset2Bounds.contains(worldPosition)) {
+                        if (std::abs(analogAmplitude - 1.0) > 0.01) {
+                            analogAmplitude = 1.0;
+                            updateAnalog();
+                        }
+                        continue;
+                    }
+                } else {
                     menu.handleClick(worldPosition.x, worldPosition.y);
 
                     sf::Event mappedEvent = event;
@@ -227,7 +344,29 @@ int main()
                     signalNeedsUpdate = true;
                 }
 
-                if (!analogMode && menu.selectedEncoder() == "AMI") {
+                if (analogMode) {
+                    if (event.key.code == sf::Keyboard::Num4 || event.key.code == sf::Keyboard::Numpad4) {
+                        if (pcmBitDepth != 4) {
+                            pcmBitDepth = 4;
+                            updateAnalog();
+                        }
+                    } else if (event.key.code == sf::Keyboard::Num6 || event.key.code == sf::Keyboard::Numpad6) {
+                        if (pcmBitDepth != 6) {
+                            pcmBitDepth = 6;
+                            updateAnalog();
+                        }
+                    } else if (event.key.code == sf::Keyboard::Up || event.key.code == sf::Keyboard::Add) {
+                        if (analogAmplitude < 0.95) {
+                            analogAmplitude = std::min(1.0, std::round((analogAmplitude + 0.1) * 10.0) / 10.0);
+                            updateAnalog();
+                        }
+                    } else if (event.key.code == sf::Keyboard::Down || event.key.code == sf::Keyboard::Subtract) {
+                        if (analogAmplitude > 0.15) {
+                            analogAmplitude = std::max(0.1, std::round((analogAmplitude - 0.1) * 10.0) / 10.0);
+                            updateAnalog();
+                        }
+                    }
+                } else if (menu.selectedEncoder() == "AMI") {
                     if (event.key.code == sf::Keyboard::N) {
                         menu.setScramblingChoice('N');
                         signalNeedsUpdate = true;
@@ -240,6 +379,7 @@ int main()
                     }
                 }
             }
+
 
             if (!analogMode) {
                 generatorPanel.handleEvent(event, windowWidth);
@@ -308,9 +448,6 @@ int main()
         window.clear(sf::Color(245, 247, 250));
 
         // 1. Top Navigation & Header Bar (3x font and component size)
-        const float headerX = margin;
-        const float headerW = windowWidth - 2.f * margin;
-
         sf::RectangleShape headerBox({headerW, headerH});
         headerBox.setPosition(headerX, headerY);
         headerBox.setFillColor(sf::Color(255, 255, 255));
@@ -359,7 +496,7 @@ int main()
         if (analogMode) {
             // Analog mode information card
             const float cardY = 125.f;
-            const float cardH = 135.f;
+            const float cardH = 150.f;
 
             sf::RectangleShape infoCard({headerW, cardH});
             infoCard.setPosition(headerX, cardY);
@@ -373,30 +510,102 @@ int main()
             infoAccent.setFillColor(sf::Color(16, 185, 129));
             window.draw(infoAccent);
 
-            sf::Text aTitle("ANALOG SIGNAL SAMPLING & PULSE CODE MODULATION (PCM)", labelFont, 32);
+            sf::Text aTitle("ANALOG SIGNAL SAMPLING & PULSE CODE MODULATION (PCM)", labelFont, 28);
             aTitle.setStyle(sf::Text::Bold);
             aTitle.setFillColor(sf::Color(15, 23, 42));
-            aTitle.setPosition(headerX + 28.f, cardY + 18.f);
+            aTitle.setPosition(headerX + 28.f, cardY + 14.f);
             window.draw(aTitle);
 
-            sf::Text aDesc("Input: Continuous Sine Wave | Sampling Rate: 8 samples/cycle | Quantization: 8 bits/sample | Total Stream: 64 bits", fontRegular, 22);
+            const int numLevels = 1 << pcmBitDepth;
+            const int totalStreamBits = 8 * pcmBitDepth;
+            std::string aDescStr = "Input: Sine Wave V(t) = A·sin(2πft), Amplitude: " +
+                formatVolt(analogAmplitude) + " V  |  8 samples/cycle  |  Quantization: " +
+                std::to_string(pcmBitDepth) + "-bit (" + std::to_string(numLevels) + " levels)  |  Stream: " +
+                std::to_string(totalStreamBits) + " bits/cycle";
+            sf::Text aDesc(aDescStr, fontRegular, 19);
             aDesc.setFillColor(sf::Color(71, 85, 105));
-            aDesc.setPosition(headerX + 28.f, cardY + 58.f);
+            aDesc.setPosition(headerX + 28.f, cardY + 54.f);
             window.draw(aDesc);
 
-            sf::Text aHint("Press 'D' or click [DIGITAL MODE] to return to line encoding schemes.", fontRegular, 20);
+            sf::Text aHint("Controls: [4] 4-bit, [6] 6-bit  |  [Up]/[+] Increase Amplitude, [Down]/[-] Decrease Amplitude", fontRegular, 17);
             aHint.setFillColor(sf::Color(100, 116, 139));
-            aHint.setPosition(headerX + 28.f, cardY + 92.f);
+            aHint.setPosition(headerX + 28.f, cardY + 90.f);
             window.draw(aHint);
 
-            const float plotTop = cardY + cardH + 24.f;
+            // Row 1 Label: Bit-Depth Selector
+            sf::Text r1Hdr("PCM RESOLUTION:", labelFont, 16);
+            r1Hdr.setStyle(sf::Text::Bold);
+            r1Hdr.setFillColor(sf::Color(100, 116, 139));
+            const sf::FloatRect r1Hb = r1Hdr.getLocalBounds();
+            r1Hdr.setPosition(pcm4BtnBounds.left - r1Hb.width - 16.f, r1Y + (r1BtnH - r1Hb.height) / 2.f - r1Hb.top - 2.f);
+            window.draw(r1Hdr);
+
+            // Row 2 Label: Sine Amplitude
+            sf::Text r2Hdr("SINE AMPLITUDE:", labelFont, 16);
+            r2Hdr.setStyle(sf::Text::Bold);
+            r2Hdr.setFillColor(sf::Color(100, 116, 139));
+            const sf::FloatRect r2Hb = r2Hdr.getLocalBounds();
+            r2Hdr.setPosition(ampMinusBtnBounds.left - r2Hb.width - 16.f, r2Y + (r2BtnH - r2Hb.height) / 2.f - r2Hb.top - 2.f);
+            window.draw(r2Hdr);
+
+            // Generic button drawer
+            auto drawPcmBtn = [&](const sf::FloatRect& bounds, const std::string& text, bool isSelected, bool isSpecial = false) {
+                sf::RectangleShape btn({bounds.width, bounds.height});
+                btn.setPosition(bounds.left, bounds.top);
+                if (isSelected) {
+                    btn.setFillColor(sf::Color(16, 185, 129));
+                    btn.setOutlineThickness(2.5f);
+                    btn.setOutlineColor(sf::Color(5, 150, 105));
+                } else if (isSpecial) {
+                    btn.setFillColor(sf::Color(255, 255, 255));
+                    btn.setOutlineThickness(1.8f);
+                    btn.setOutlineColor(sf::Color(148, 163, 184));
+                } else {
+                    btn.setFillColor(sf::Color(241, 245, 249));
+                    btn.setOutlineThickness(1.5f);
+                    btn.setOutlineColor(sf::Color(203, 213, 225));
+                }
+                window.draw(btn);
+
+                sf::Text t(text, labelFont, 18);
+                t.setStyle(sf::Text::Bold);
+                if (isSelected) {
+                    t.setFillColor(sf::Color(255, 255, 255));
+                } else if (isSpecial) {
+                    t.setFillColor(sf::Color(37, 99, 235));
+                } else {
+                    t.setFillColor(sf::Color(51, 65, 85));
+                }
+                const sf::FloatRect tb = t.getLocalBounds();
+                t.setPosition(
+                    bounds.left + (bounds.width - tb.width) / 2.f - tb.left,
+                    bounds.top + (bounds.height - tb.height) / 2.f - tb.top - 2.f
+                );
+                window.draw(t);
+            };
+
+            // Row 1 buttons: 4-bit and 6-bit
+            drawPcmBtn(pcm4BtnBounds, "4-bit PCM (16 lvls)", pcmBitDepth == 4);
+            drawPcmBtn(pcm6BtnBounds, "6-bit PCM (64 lvls)", pcmBitDepth == 6);
+
+            // Row 2 buttons: Amplitude [-], [ Amp: X.XX V ], [+], presets [0.50 V], [1.00 V]
+            drawPcmBtn(ampMinusBtnBounds, "-", false);
+            drawPcmBtn(ampValBoxBounds, formatVolt(analogAmplitude) + " V", false, true);
+            drawPcmBtn(ampPlusBtnBounds, "+", false);
+            drawPcmBtn(ampPreset1Bounds, "0.50 V", std::abs(analogAmplitude - 0.5) < 0.01);
+            drawPcmBtn(ampPreset2Bounds, "1.00 V", std::abs(analogAmplitude - 1.0) < 0.01);
+
+            const float plotTop = cardY + cardH + 20.f;
             const float plotHeight = std::max(300.f, windowHeight - plotTop - margin);
             const float plotWidth = headerW;
 
             plotter.drawComparison(
                 window,
-                originalSignal,
-                pcmResult.staircase,
+                continuousSine,           // smooth 2881-pt sine (Blue)
+                pcmResult.staircase,      // ZOH staircase reconstruction (Green)
+                analogSamples,            // 8 discrete sample dots + stems (Amber)
+                analogBits,               // n-bit PCM codewords per column
+                pcmBitDepth,              // 4 or 6 bits/sample
                 "Original Continuous Sine Wave vs Quantized PCM Reconstruction",
                 margin,
                 plotTop,

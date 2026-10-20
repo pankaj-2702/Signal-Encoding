@@ -1,1 +1,4 @@
+test_pcm 2 0.00171245
+test_generator 2 0.00250701
+test_scramblers 2 0.00183414
 ---

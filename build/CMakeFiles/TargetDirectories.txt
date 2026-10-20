@@ -1,3 +1,7 @@
 /home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/signal-codec.dir
+/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/test_pcm.dir
+/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/test_generator.dir
+/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/test_scramblers.dir
+/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/test.dir
 /home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/edit_cache.dir
 /home/PankajKumar/Desktop/Line Encding/build/CMakeFiles/rebuild_cache.dir

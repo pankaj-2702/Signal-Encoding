@@ -1,3 +1,118 @@
-Start testing: Oct 20 00:14 IST
+Start testing: Oct 21 01:34 IST
 ----------------------------------------------------------
-End testing: Oct 20 00:14 IST
+1/3 Testing: test_pcm
+1/3 Test: test_pcm
+Command: "/home/PankajKumar/Desktop/Line Encding/build/test_pcm"
+Directory: /home/PankajKumar/Desktop/Line Encding/build
+"test_pcm" start time: Oct 21 01:34 IST
+Output:
+----------------------------------------------------------
+PASS: 4-bit PCM tests (16 levels, 4 bits/sample)
+PASS: 6-bit PCM tests (64 levels, 6 bits/sample)
+PASS: Amplitude scaling tests (0.5V vs 1.0V)
+PASS: Error handling & utility tests
+
+All PCM 4-bit, 6-bit, and amplitude scaling tests passed successfully!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_pcm" end time: Oct 21 01:34 IST
+"test_pcm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: test_generator
+2/3 Test: test_generator
+Command: "/home/PankajKumar/Desktop/Line Encding/build/test_generator"
+Directory: /home/PankajKumar/Desktop/Line Encding/build
+"test_generator" start time: Oct 21 01:34 IST
+Output:
+----------------------------------------------------------
+
+=== Random Generation Tests ===
+[PASS] Random generation: zero length
+[PASS] Empty input has an empty palindrome
+[PASS] Random sequence has requested length 1
+[PASS] Random sequence contains only binary bits
+[PASS] Reported palindrome reads the same both ways
+[PASS] Reported palindrome exists in generated sequence
+[PASS] Reported palindrome is maximal for length 1
+[PASS] Random sequence has requested length 2
+[PASS] Random sequence contains only binary bits
+[PASS] Reported palindrome reads the same both ways
+[PASS] Reported palindrome exists in generated sequence
+[PASS] Reported palindrome is maximal for length 2
+[PASS] Random sequence has requested length 5
+[PASS] Random sequence contains only binary bits
+[PASS] Reported palindrome reads the same both ways
+[PASS] Reported palindrome exists in generated sequence
+[PASS] Reported palindrome is maximal for length 5
+[PASS] Random sequence has requested length 20
+[PASS] Random sequence contains only binary bits
+[PASS] Reported palindrome reads the same both ways
+[PASS] Reported palindrome exists in generated sequence
+[PASS] Reported palindrome is maximal for length 20
+[PASS] Random sequence has requested length 100
+[PASS] Random sequence contains only binary bits
+[PASS] Reported palindrome reads the same both ways
+[PASS] Reported palindrome exists in generated sequence
+[PASS] Reported palindrome is maximal for length 100
+
+=== Fixed Pattern Tests ===
+[PASS] 4-zero pattern: requested total length is preserved
+[PASS] Inserted pattern position is within bounds
+[PASS] 4 consecutive zeros are inserted
+[PASS] Hybrid generation returns a longest palindrome
+[PASS] 8-zero pattern: requested total length is preserved
+[PASS] Inserted pattern position is within bounds
+[PASS] 8 consecutive zeros are inserted
+[PASS] Hybrid generation returns a longest palindrome
+
+=== Invalid Input Tests ===
+[PASS] Empty pattern is rejected
+[PASS] Pattern longer than sequence is rejected
+[PASS] Pattern containing 2 is rejected
+[PASS] Pattern cannot fit in zero-length sequence
+
+All 39 checks passed!
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_generator" end time: Oct 21 01:34 IST
+"test_generator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: test_scramblers
+3/3 Test: test_scramblers
+Command: "/home/PankajKumar/Desktop/Line Encding/build/test_scramblers"
+Directory: /home/PankajKumar/Desktop/Line Encding/build
+"test_scramblers" start time: Oct 21 01:34 IST
+Output:
+----------------------------------------------------------
+=== B8ZS Tests ===
+[PASS] B8ZS substitution after positive pulse
+[PASS] B8ZS substitution after negative pulse
+[PASS] B8ZS leaves short zero runs unchanged
+[PASS] B8ZS handles eight zeros at the beginning
+
+=== HDB3 Tests ===
+[PASS] HDB3 uses 000V for odd pulse count
+[PASS] HDB3 uses B00V for even pulse count
+[PASS] HDB3 handles consecutive four-zero groups
+[PASS] HDB3 handles four zeros at the beginning
+
+=== Invalid Input Tests ===
+[PASS] B8ZS rejects invalid input bits
+[PASS] HDB3 rejects invalid input bits
+
+All 10 tests passed!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_scramblers" end time: Oct 21 01:34 IST
+"test_scramblers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 21 01:34 IST

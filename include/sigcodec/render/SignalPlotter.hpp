@@ -26,8 +26,24 @@ public:
 
     void drawComparison(
         sf::RenderTarget& target,
-        const Signal& originalSignal,
+        const Signal& continuousSignal,
         const Signal& reconstructedSignal,
+        const std::string& title,
+        float x,
+        float y,
+        float width,
+        float height,
+        const sf::Font& font,
+        const sf::Font* boldFont = nullptr
+    ) const;
+
+    void drawComparison(
+        sf::RenderTarget& target,
+        const Signal& continuousSignal,
+        const Signal& reconstructedSignal,
+        const std::vector<double>& discreteSamples,
+        const BitStream& pcmBits,
+        int bitsPerSample,
         const std::string& title,
         float x,
         float y,

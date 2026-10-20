@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = "/home/PankajKumar/Desktop/Line Encding/build"
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -129,6 +139,45 @@ signal-codec/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/build
 .PHONY : signal-codec/fast
 
+#=============================================================================
+# Target rules for targets named test_pcm
+
+# Build rule for target.
+test_pcm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_pcm
+.PHONY : test_pcm
+
+# fast build rule for target.
+test_pcm/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/build
+.PHONY : test_pcm/fast
+
+#=============================================================================
+# Target rules for targets named test_generator
+
+# Build rule for target.
+test_generator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_generator
+.PHONY : test_generator
+
+# fast build rule for target.
+test_generator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/build
+.PHONY : test_generator/fast
+
+#=============================================================================
+# Target rules for targets named test_scramblers
+
+# Build rule for target.
+test_scramblers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_scramblers
+.PHONY : test_scramblers
+
+# fast build rule for target.
+test_scramblers/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/build
+.PHONY : test_scramblers/fast
+
 apps/main.o: apps/main.cpp.o
 .PHONY : apps/main.o
 
@@ -159,6 +208,7 @@ src/analog/Pcm.o: src/analog/Pcm.cpp.o
 # target to build an object file
 src/analog/Pcm.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/src/analog/Pcm.cpp.o
 .PHONY : src/analog/Pcm.cpp.o
 
 src/analog/Pcm.i: src/analog/Pcm.cpp.i
@@ -167,6 +217,7 @@ src/analog/Pcm.i: src/analog/Pcm.cpp.i
 # target to preprocess a source file
 src/analog/Pcm.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/src/analog/Pcm.cpp.i
 .PHONY : src/analog/Pcm.cpp.i
 
 src/analog/Pcm.s: src/analog/Pcm.cpp.s
@@ -175,6 +226,7 @@ src/analog/Pcm.s: src/analog/Pcm.cpp.s
 # target to generate assembly for a file
 src/analog/Pcm.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/analog/Pcm.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/src/analog/Pcm.cpp.s
 .PHONY : src/analog/Pcm.cpp.s
 
 src/generator/DataGenerator.o: src/generator/DataGenerator.cpp.o
@@ -183,6 +235,7 @@ src/generator/DataGenerator.o: src/generator/DataGenerator.cpp.o
 # target to build an object file
 src/generator/DataGenerator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/src/generator/DataGenerator.cpp.o
 .PHONY : src/generator/DataGenerator.cpp.o
 
 src/generator/DataGenerator.i: src/generator/DataGenerator.cpp.i
@@ -191,6 +244,7 @@ src/generator/DataGenerator.i: src/generator/DataGenerator.cpp.i
 # target to preprocess a source file
 src/generator/DataGenerator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/src/generator/DataGenerator.cpp.i
 .PHONY : src/generator/DataGenerator.cpp.i
 
 src/generator/DataGenerator.s: src/generator/DataGenerator.cpp.s
@@ -199,6 +253,7 @@ src/generator/DataGenerator.s: src/generator/DataGenerator.cpp.s
 # target to generate assembly for a file
 src/generator/DataGenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/generator/DataGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/src/generator/DataGenerator.cpp.s
 .PHONY : src/generator/DataGenerator.cpp.s
 
 src/linecode/Ami.o: src/linecode/Ami.cpp.o
@@ -207,6 +262,7 @@ src/linecode/Ami.o: src/linecode/Ami.cpp.o
 # target to build an object file
 src/linecode/Ami.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/Ami.cpp.o
 .PHONY : src/linecode/Ami.cpp.o
 
 src/linecode/Ami.i: src/linecode/Ami.cpp.i
@@ -215,6 +271,7 @@ src/linecode/Ami.i: src/linecode/Ami.cpp.i
 # target to preprocess a source file
 src/linecode/Ami.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/Ami.cpp.i
 .PHONY : src/linecode/Ami.cpp.i
 
 src/linecode/Ami.s: src/linecode/Ami.cpp.s
@@ -223,6 +280,7 @@ src/linecode/Ami.s: src/linecode/Ami.cpp.s
 # target to generate assembly for a file
 src/linecode/Ami.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/Ami.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/Ami.cpp.s
 .PHONY : src/linecode/Ami.cpp.s
 
 src/linecode/B8ZS.o: src/linecode/B8ZS.cpp.o
@@ -231,6 +289,7 @@ src/linecode/B8ZS.o: src/linecode/B8ZS.cpp.o
 # target to build an object file
 src/linecode/B8ZS.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/B8ZS.cpp.o
 .PHONY : src/linecode/B8ZS.cpp.o
 
 src/linecode/B8ZS.i: src/linecode/B8ZS.cpp.i
@@ -239,6 +298,7 @@ src/linecode/B8ZS.i: src/linecode/B8ZS.cpp.i
 # target to preprocess a source file
 src/linecode/B8ZS.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/B8ZS.cpp.i
 .PHONY : src/linecode/B8ZS.cpp.i
 
 src/linecode/B8ZS.s: src/linecode/B8ZS.cpp.s
@@ -247,6 +307,7 @@ src/linecode/B8ZS.s: src/linecode/B8ZS.cpp.s
 # target to generate assembly for a file
 src/linecode/B8ZS.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/B8ZS.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/B8ZS.cpp.s
 .PHONY : src/linecode/B8ZS.cpp.s
 
 src/linecode/DiffManchester.o: src/linecode/DiffManchester.cpp.o
@@ -279,6 +340,7 @@ src/linecode/HDB3.o: src/linecode/HDB3.cpp.o
 # target to build an object file
 src/linecode/HDB3.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/HDB3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/HDB3.cpp.o
 .PHONY : src/linecode/HDB3.cpp.o
 
 src/linecode/HDB3.i: src/linecode/HDB3.cpp.i
@@ -287,6 +349,7 @@ src/linecode/HDB3.i: src/linecode/HDB3.cpp.i
 # target to preprocess a source file
 src/linecode/HDB3.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/HDB3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/HDB3.cpp.i
 .PHONY : src/linecode/HDB3.cpp.i
 
 src/linecode/HDB3.s: src/linecode/HDB3.cpp.s
@@ -295,6 +358,7 @@ src/linecode/HDB3.s: src/linecode/HDB3.cpp.s
 # target to generate assembly for a file
 src/linecode/HDB3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/linecode/HDB3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/src/linecode/HDB3.cpp.s
 .PHONY : src/linecode/HDB3.cpp.s
 
 src/linecode/Manchester.o: src/linecode/Manchester.cpp.o
@@ -441,6 +505,78 @@ src/ui/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/src/ui/Menu.cpp.s
 .PHONY : src/ui/Menu.cpp.s
 
+tests/test_generator.o: tests/test_generator.cpp.o
+.PHONY : tests/test_generator.o
+
+# target to build an object file
+tests/test_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/tests/test_generator.cpp.o
+.PHONY : tests/test_generator.cpp.o
+
+tests/test_generator.i: tests/test_generator.cpp.i
+.PHONY : tests/test_generator.i
+
+# target to preprocess a source file
+tests/test_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/tests/test_generator.cpp.i
+.PHONY : tests/test_generator.cpp.i
+
+tests/test_generator.s: tests/test_generator.cpp.s
+.PHONY : tests/test_generator.s
+
+# target to generate assembly for a file
+tests/test_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/tests/test_generator.cpp.s
+.PHONY : tests/test_generator.cpp.s
+
+tests/test_pcm.o: tests/test_pcm.cpp.o
+.PHONY : tests/test_pcm.o
+
+# target to build an object file
+tests/test_pcm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/tests/test_pcm.cpp.o
+.PHONY : tests/test_pcm.cpp.o
+
+tests/test_pcm.i: tests/test_pcm.cpp.i
+.PHONY : tests/test_pcm.i
+
+# target to preprocess a source file
+tests/test_pcm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/tests/test_pcm.cpp.i
+.PHONY : tests/test_pcm.cpp.i
+
+tests/test_pcm.s: tests/test_pcm.cpp.s
+.PHONY : tests/test_pcm.s
+
+# target to generate assembly for a file
+tests/test_pcm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/tests/test_pcm.cpp.s
+.PHONY : tests/test_pcm.cpp.s
+
+tests/test_scramblers.o: tests/test_scramblers.cpp.o
+.PHONY : tests/test_scramblers.o
+
+# target to build an object file
+tests/test_scramblers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/tests/test_scramblers.cpp.o
+.PHONY : tests/test_scramblers.cpp.o
+
+tests/test_scramblers.i: tests/test_scramblers.cpp.i
+.PHONY : tests/test_scramblers.i
+
+# target to preprocess a source file
+tests/test_scramblers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/tests/test_scramblers.cpp.i
+.PHONY : tests/test_scramblers.cpp.i
+
+tests/test_scramblers.s: tests/test_scramblers.cpp.s
+.PHONY : tests/test_scramblers.s
+
+# target to generate assembly for a file
+tests/test_scramblers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/tests/test_scramblers.cpp.s
+.PHONY : tests/test_scramblers.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -449,7 +585,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... signal-codec"
+	@echo "... test_generator"
+	@echo "... test_pcm"
+	@echo "... test_scramblers"
 	@echo "... apps/main.o"
 	@echo "... apps/main.i"
 	@echo "... apps/main.s"
@@ -489,6 +629,15 @@ help:
 	@echo "... src/ui/Menu.o"
 	@echo "... src/ui/Menu.i"
 	@echo "... src/ui/Menu.s"
+	@echo "... tests/test_generator.o"
+	@echo "... tests/test_generator.i"
+	@echo "... tests/test_generator.s"
+	@echo "... tests/test_pcm.o"
+	@echo "... tests/test_pcm.i"
+	@echo "... tests/test_pcm.s"
+	@echo "... tests/test_scramblers.o"
+	@echo "... tests/test_scramblers.i"
+	@echo "... tests/test_scramblers.s"
 .PHONY : help
 
 

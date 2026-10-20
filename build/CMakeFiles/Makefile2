@@ -64,10 +64,16 @@ CMAKE_BINARY_DIR = "/home/PankajKumar/Desktop/Line Encding/build"
 
 # The main recursive "all" target.
 all: CMakeFiles/signal-codec.dir/all
+all: CMakeFiles/test_pcm.dir/all
+all: CMakeFiles/test_generator.dir/all
+all: CMakeFiles/test_scramblers.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/signal-codec.dir/codegen
+codegen: CMakeFiles/test_pcm.dir/codegen
+codegen: CMakeFiles/test_generator.dir/codegen
+codegen: CMakeFiles/test_scramblers.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -76,6 +82,9 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/signal-codec.dir/clean
+clean: CMakeFiles/test_pcm.dir/clean
+clean: CMakeFiles/test_generator.dir/clean
+clean: CMakeFiles/test_scramblers.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -109,6 +118,102 @@ CMakeFiles/signal-codec.dir/codegen:
 CMakeFiles/signal-codec.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal-codec.dir/build.make CMakeFiles/signal-codec.dir/clean
 .PHONY : CMakeFiles/signal-codec.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_pcm.dir
+
+# All Build rule for target.
+CMakeFiles/test_pcm.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=18,19,20 "Built target test_pcm"
+.PHONY : CMakeFiles/test_pcm.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_pcm.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_pcm.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" 0
+.PHONY : CMakeFiles/test_pcm.dir/rule
+
+# Convenience name for target.
+test_pcm: CMakeFiles/test_pcm.dir/rule
+.PHONY : test_pcm
+
+# codegen rule for target.
+CMakeFiles/test_pcm.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=18,19,20 "Finished codegen for target test_pcm"
+.PHONY : CMakeFiles/test_pcm.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_pcm.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_pcm.dir/build.make CMakeFiles/test_pcm.dir/clean
+.PHONY : CMakeFiles/test_pcm.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_generator.dir
+
+# All Build rule for target.
+CMakeFiles/test_generator.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=15,16,17 "Built target test_generator"
+.PHONY : CMakeFiles/test_generator.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_generator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_generator.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" 0
+.PHONY : CMakeFiles/test_generator.dir/rule
+
+# Convenience name for target.
+test_generator: CMakeFiles/test_generator.dir/rule
+.PHONY : test_generator
+
+# codegen rule for target.
+CMakeFiles/test_generator.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=15,16,17 "Finished codegen for target test_generator"
+.PHONY : CMakeFiles/test_generator.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_generator.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_generator.dir/build.make CMakeFiles/test_generator.dir/clean
+.PHONY : CMakeFiles/test_generator.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_scramblers.dir
+
+# All Build rule for target.
+CMakeFiles/test_scramblers.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=21,22,23,24,25 "Built target test_scramblers"
+.PHONY : CMakeFiles/test_scramblers.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_scramblers.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_scramblers.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" 0
+.PHONY : CMakeFiles/test_scramblers.dir/rule
+
+# Convenience name for target.
+test_scramblers: CMakeFiles/test_scramblers.dir/rule
+.PHONY : test_scramblers
+
+# codegen rule for target.
+CMakeFiles/test_scramblers.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/PankajKumar/Desktop/Line Encding/build/CMakeFiles" --progress-num=21,22,23,24,25 "Finished codegen for target test_scramblers"
+.PHONY : CMakeFiles/test_scramblers.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_scramblers.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scramblers.dir/build.make CMakeFiles/test_scramblers.dir/clean
+.PHONY : CMakeFiles/test_scramblers.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

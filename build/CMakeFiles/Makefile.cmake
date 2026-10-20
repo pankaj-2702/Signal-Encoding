@@ -53,4 +53,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/signal-codec.dir/DependInfo.cmake"
+  "CMakeFiles/test_pcm.dir/DependInfo.cmake"
+  "CMakeFiles/test_generator.dir/DependInfo.cmake"
+  "CMakeFiles/test_scramblers.dir/DependInfo.cmake"
   )
