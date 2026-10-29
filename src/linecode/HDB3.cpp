@@ -41,13 +41,6 @@ if (fourZeros) {
 
         output.insert(output.end(), {0.0, 0.0, 0.0, V});
         lastPulse = V;
-    } else if (i == 0 && output.empty()) {
-        // Startup convention: no preceding pulse exists.
-        // Use 000V with the initial reference polarity.
-        const Level V = lastPulse;
-
-        output.insert(output.end(), {0.0, 0.0, 0.0, V});
-        lastPulse = V;
     } else {
         // Even number of ordinary pulses: B00V.
         const Level B = -lastPulse;
