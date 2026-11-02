@@ -85,6 +85,50 @@ GenerationResult DataGenerator::generateWithPattern(
     return result;
 }
 
+GenerationResult DataGenerator::createCustom(const BitStream& bits) {
+    if (bits.empty()) {
+        throw std::invalid_argument("Custom bit sequence cannot be empty.");
+    }
+
+    for (Bit bit : bits) {
+        if (bit > 1) {
+            throw std::invalid_argument("Custom bits must contain only 0 and 1.");
+        }
+    }
+
+    GenerationResult result;
+    result.bits = bits;
+    result.longestPalindrome = findLongestPalindrome(result.bits);
+    result.patternStart = 0;
+
+    return result;
+}
+
+GenerationResult DataGenerator::createCustom(const std::string& bitString) {
+    if (bitString.empty()) {
+        throw std::invalid_argument("Custom bit sequence cannot be empty.");
+    }
+
+    BitStream bits;
+    bits.reserve(bitString.size());
+
+    for (char c : bitString) {
+        if (c == '0') {
+            bits.push_back(0);
+        } else if (c == '1') {
+            bits.push_back(1);
+        } else if (c == ' ' || c == '\t' || c == '\r' || c == '\n') {
+            continue; // allow whitespace separation for readability
+        } else {
+            throw std::invalid_argument(
+                std::string("Invalid character '") + c + "'. Only 0 and 1 are allowed."
+            );
+        }
+    }
+
+    return createCustom(bits);
+}
+
 BitStream DataGenerator::findLongestPalindrome(
     const BitStream& bits
 ) const {

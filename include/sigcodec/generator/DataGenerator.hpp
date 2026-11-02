@@ -26,6 +26,10 @@ public:
         const BitStream& pattern
     );
 
+    // Method 3: Process custom bitstream and compute longest palindrome.
+    GenerationResult createCustom(const BitStream& bits);
+    GenerationResult createCustom(const std::string& bitString);
+
 private:
     std::mt19937 randomEngine_;
 

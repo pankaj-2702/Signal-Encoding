@@ -336,12 +336,16 @@ int main()
                     continue;
                 }
 
-                if (event.key.code == sf::Keyboard::A) {
-                    analogMode = true;
-                    signalNeedsUpdate = true;
-                } else if (event.key.code == sf::Keyboard::D) {
-                    analogMode = false;
-                    signalNeedsUpdate = true;
+                const bool inputFocused = !analogMode && generatorPanel.isInputFocused();
+
+                if (!inputFocused) {
+                    if (event.key.code == sf::Keyboard::A) {
+                        analogMode = true;
+                        signalNeedsUpdate = true;
+                    } else if (event.key.code == sf::Keyboard::D) {
+                        analogMode = false;
+                        signalNeedsUpdate = true;
+                    }
                 }
 
                 if (analogMode) {
@@ -366,7 +370,7 @@ int main()
                             updateAnalog();
                         }
                     }
-                } else if (menu.selectedEncoder() == "AMI") {
+                } else if (!inputFocused && menu.selectedEncoder() == "AMI") {
                     if (event.key.code == sf::Keyboard::N) {
                         menu.setScramblingChoice('N');
                         signalNeedsUpdate = true;
@@ -379,7 +383,6 @@ int main()
                     }
                 }
             }
-
 
             if (!analogMode) {
                 generatorPanel.handleEvent(event, windowWidth);

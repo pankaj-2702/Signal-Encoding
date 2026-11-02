@@ -194,6 +194,48 @@ void testInvalidPatterns(DataGenerator& generator) {
     check(zeroLengthRejected, "Pattern cannot fit in zero-length sequence");
 }
 
+void testCustomGeneration(DataGenerator& generator) {
+    // 1. Valid custom bitstream string
+    const std::string validStr = "10110000000010";
+    auto res1 = generator.createCustom(validStr);
+    check(res1.bits.size() == 14, "Custom string length 14 created successfully");
+    check(isPalindrome(res1.longestPalindrome), "Custom palindrome is valid");
+    check(res1.longestPalindrome.size() == bruteForceLongestPalindrome(res1.bits), "Custom palindrome is maximal");
+
+    // 2. Bitstream with spaces / tabs
+    const std::string spacedStr = " 1011 0000 0000 10 ";
+    auto res2 = generator.createCustom(spacedStr);
+    check(res2.bits == res1.bits, "Whitespace in custom bitstring is ignored");
+
+    // 3. Known full palindrome string
+    const std::string palStr = "011010110";
+    auto res3 = generator.createCustom(palStr);
+    check(res3.longestPalindrome.size() == 9, "Known full-string palindrome recognized");
+
+    // 4. Custom bitstream from BitStream vector
+    const BitStream bitVec = {1, 0, 1, 1, 0, 1};
+    auto res4 = generator.createCustom(bitVec);
+    check(res4.bits == bitVec, "Custom BitStream vector preserved");
+
+    // 5. Empty bitstream rejected
+    bool emptyRejected = false;
+    try {
+        generator.createCustom("");
+    } catch (const std::invalid_argument&) {
+        emptyRejected = true;
+    }
+    check(emptyRejected, "Empty custom string is rejected");
+
+    // 6. Invalid character rejected
+    bool invalidCharRejected = false;
+    try {
+        generator.createCustom("1010201");
+    } catch (const std::invalid_argument&) {
+        invalidCharRejected = true;
+    }
+    check(invalidCharRejected, "Custom string with invalid character '2' is rejected");
+}
+
 int main() {
     DataGenerator generator;
 
@@ -205,6 +247,9 @@ int main() {
 
     std::cout << "\n=== Invalid Input Tests ===\n";
     testInvalidPatterns(generator);
+
+    std::cout << "\n=== Custom Input Tests ===\n";
+    testCustomGeneration(generator);
 
     std::cout << "\nAll " << testsPassed
               << " checks passed!\n";
